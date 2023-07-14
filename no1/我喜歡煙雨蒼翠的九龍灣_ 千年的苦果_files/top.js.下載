@@ -1,0 +1,6 @@
+document.write('<div class="module list cocolog" style="text-align: center;display:block !important;overflow:visible !important;position:static !important;">' +
+// '<h2 class="module-header" style="display:block !important;overflow:visible !important;position:static !important;"></h2>' +
+'<div class="module-top"></div>' +
+'<div class="module-content module-body" style="display:block !important;overflow:visible !important;position:static !important;">' +
+'<ul class="module-list" style="display:block !important;overflow:visible !important;position:static !important;">' +
+'<li style="background: transparent none repeat scroll 0% 0%; overflow: visible ! important; padding-left: 0px; padding-top: 5px; list-style-type: none; list-style-image: none; display: block ! important; position: static ! important;" class="module-list-item powered">');

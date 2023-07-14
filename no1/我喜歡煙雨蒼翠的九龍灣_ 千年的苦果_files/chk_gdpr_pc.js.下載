@@ -1,0 +1,41 @@
+document.write(
+'<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />',
+'<scr' + 'ipt src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></scr' + 'ipt>'
+);
+// <scr' + 'ipt>                                
+// for GDPR, show non-Japanese-users a popup.
+window.addEventListener("load", function(){  
+                                             
+ // get the browser's top priority language.
+  var language = (window.navigator.languages && window.navigator.languages[0]) || // for Chrome
+    window.navigator.language ||         // for FireFox                                        
+    window.navigator.userLanguage ||     // for IE                                             
+    window.navigator.browserLanguage;    // for IE                                             
+  var regex = /^ja/;                 
+  var findJa = language.match(regex);
+                                     
+  if(findJa == null){                
+    window.cookieconsent.initialise({
+      "palette": {                   
+        "popup": {                   
+          "background": "#aab2bd",   
+          "text": "#ffffff"          
+        },                           
+        "button": {                  
+          "background": "#898c96"    
+        }                            
+      },                             
+      "content": {                   
+        "message": "By using our services, you agree that we and our <a href=\'https:\//www.nifty.com/policy/ad.htm\' target=\'_blank\' style=\'color:hite;\'>partners</a> use cookies to improve advertising and enhance your experience on our services.",
+        "dismiss": "OK",                                        
+        "link": "Learn more",                                   
+        "href": "http://www.nifty.co.jp/privacy/"               
+      },                                                        
+      // see https://github.com/insites/cookieconsent/issues/194
+      "cookie": {                                               
+//        "domain": "m-cocolog.jp"  //for SP
+        "domain": "cocolog-nifty.com"  //for PC
+      }                                                         
+})}});                                                          
+// </scr' + 'ipt>'
+// );

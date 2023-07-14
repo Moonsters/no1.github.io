@@ -1,0 +1,56 @@
+function setTrackbackMessage () {
+    if ((typeof(blogConfig) != 'undefined') && blogConfig &&
+        (blogConfig["moderate_feedback_trackbacks"] != "1")) {
+        return;
+    }
+    var e;
+    var elems = document.getElementsByTagName( "*" );
+    for (var i = 0; i < elems.length; i++) {
+        var cName = elems[i].getAttribute("className") || elems[i].getAttribute("class");
+        if (cName && cName.match("^trackback-url")) {
+            e = elems[i];
+            break;
+        }
+        else if (cName && cName.match("^trackbacks-info")) {
+            e = elems[i].getElementsByTagName( "p" )[0];
+            break;
+        }
+    }
+}
+
+if (window.addEventListener)
+    window.addEventListener('load', setTrackbackMessage, false);
+else if (window.attachEvent)
+    window.attachEvent('onload', setTrackbackMessage);
+
+function replace_mynifty_link() {
+    if (!document.getElementById){
+        return;
+    }
+    var element = document.getElementById('nifty_rss_reader');
+    if (!element){
+        setTimeout("replace_mynifty_link();", 100);
+        return;
+    }
+    var anchors = element.getElementsByTagName('a')
+    if (anchors.length == 0){
+        return;
+    }
+    var url = "javascript:void(window.open('https://my.nifty.com/my/weblogclip_qlink_popup?cmd=add&adr='+encodeURI(location.href),'my_blogclip','scrollbars=yes,resizable=yes,width=810,height=550'))";
+    anchors[0].setAttribute('href', url);
+}
+
+replace_mynifty_link();
+
+// loading config
+if (typeof blogConfig == 'undefined') {
+    var links = document.getElementsByTagName('link');
+    for (var i = 0; i < links.length; i++) {
+        if ((links[i].getAttribute('rel') == 'alternate') &&
+            (links[i].getAttribute('type') == 'application/atom+xml')) {
+            var blogURL = links[i].getAttribute('href').replace(/atom.xml$/, '');
+            document.write('<script type="text/javascript" src="' + blogURL + '.config.js"></script>');
+            break;
+        }
+    }
+}

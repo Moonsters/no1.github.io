@@ -1,0 +1,197 @@
+/* for ad. of Cocolog Free */
+.ad-container .checkbutton {
+    text-align: left;
+    display: none;
+}
+.ad-container .checkbutton a {
+    position: absolute;
+    background: url(/.shared-pleasy/js/multibox/multibox/images/close.png) no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-left: -28px;
+}
+
+#cocolog-fpa-header-ad-container, #cocolog-fpa-footer-ad-container {
+    width: 728px;
+    margin: 0 auto;
+}
+
+#cocolog-fpa-header, #cocolog-fpa-entry-bottom, #cocolog-fpa-footer {
+    text-align: center;
+}
+
+/* for global navigation header */
+#gNaviCocolog {
+	margin: 0;
+	padding: 0;
+	min-width:770px;
+	background: url(//www.cocolog-nifty.com/common_header2/images/bg_gnavi.gif) left bottom repeat-x #FFFFFF;
+	border-top: solid 2px #FFCC00;
+	border-bottom: solid 1px #FFCC00;
+	text-align:left;
+	line-height:1;
+	}
+
+@media screen and (max-width:1030px) {
+       #gNaviCocolog .gnavi-info {
+               display: none;
+       }
+       #gNaviCocolog #form1 input.textbox1 {
+               width: 80px;
+       }
+}
+
+/*clearfix*/
+div#gNaviCocolog:after{
+	content: "";
+	display: block;
+	clear: both;
+	height: 0.1px;
+}
+
+* html div#gNaviCocolog{ display: inline-block; }
+
+/* no ie mac \*/
+* html div#gNaviCocolog{ height: 1%;min-height:1px; }
+div#gNaviCocolog{ display: block; }
+/* */
+
+#gNaviCocolog h1 {
+	margin:0;
+	padding:0;
+	float:left;
+	font-size:small;
+	line-height:1;
+}
+
+#gNaviCocolog h1 img.nifLogo {
+	margin-right: 3px;
+}
+
+#gNaviCocolog form {
+	margin:0;
+	padding:0;
+	text-align:right;
+	float:right;
+	/*color:#544001;*/
+	line-height: 1;
+	white-space:nowrap;
+	/*vertical-align: middle;*/
+	color:#000000;
+	font-size:small;
+}
+#gNaviCocolog textarea {
+	margin:0;
+	padding:0;
+}
+
+/************************************************************
+フォームタグclass
+フォームで使う共通設定
+************************************************************/
+#gNaviRadioWeb{
+	border:none;
+	background-color:#ffffe6;
+}
+
+#gNaviRadioSite{
+	border:none;
+	background-color:#ffffe6;
+}
+#gNaviSubmit{
+	border: 1px solid #afafaf;
+}
+/*外観*/
+.textbox1{
+	border: 1px solid #afafaf;
+	background-color: #f5f5f5;
+	padding: 1px;
+}
+
+/*幅*/
+.textbox1 {
+	width: 150px;/*検索用*/
+}
+
+/*フォーカス時*/
+.textbox1:focus,.textbox2:focus,.textbox3:focus,.textbox4:focus,.textbox5:focus,.textbox6:focus,.textbox_none:focus {
+	border-color: #7F9DB9; /* フォーカス時のボーダーの色を指定 */
+	background-color: #FFFFFF; /* フォーカス時の背景色を指定 */
+}
+
+#gNaviCocolog p {
+	margin:0;
+	padding-top:7px;
+	padding-bottom:3px;
+	padding-right:10px;
+	text-align:right;
+	float:right;
+	/*background-color:#544001;*/
+	line-height: 1;
+	white-space:nowrap;
+	vertical-align: middle;
+	font-size:x-small;
+}
+
+#gNaviCocolog p a {
+	font-size:x-small;
+	font-weight:normal;
+	color:#2fb3e6;
+	text-decoration:underline;
+	line-height: 1;
+}
+
+#gNaviCocolog p a img {
+	margin-bottom:1px;
+	vertical-align: middle;
+}
+
+#gNaviCocolog {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#gNaviCocolog div.logo {
+    float: left;
+    font-size: small;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#gNaviCocolog p {
+    float: none;
+    display: inline;
+    color: black;
+    font-size: medium;
+}
+
+#gNaviCocolog div.logo, #gNaviCocolog form {
+    display: inline;
+    margin: 0 2em;
+    padding: 0;
+}
+
+#gNaviCocolog form {
+    line-height: 1em;
+    padding: 0 2em 0 0;
+    overflow: hidden;
+}
+
+/* IE7 */
+*+html #gNaviCocolog form {
+    margin-top: -1em;
+}
+
+#gNaviCocolog p a {
+    font-size: small;
+}
+
+#gNaviCocolog p a:link, #gNaviCocolog p a:hover, #gNaviCocolog p a:visited {
+    color: black;
+}
+
+.navi-spacer {
+    height: 30px;
+}

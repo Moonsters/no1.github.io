@@ -1,0 +1,105 @@
+if (typeof CocologFPA.instance === 'undefined') {
+  CocologFPA.instance = function() {};
+}
+CocologFPA.Container = function(param) {
+  this.html = param.html || '';
+  this.url  = CocologFPA.viewUrl || '';
+};
+CocologFPA.Container.prototype = {
+  getCookie: function (name) {
+    var key = name + '=';
+    var c = document.cookie;
+    var i = c.indexOf(key);
+    if (i < 0) return '';
+    var j = c.indexOf(';', i + key.length);
+    if (j < 0) j = c.length;
+    return unescape(c.substring(i + key.length, j));
+  },
+  hasCookie: function() {
+    var domain = blogConfig.blogDomain;
+    var fromCookie = this.getCookie('blogDomain');
+    if (domain === fromCookie) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  toString: function() {
+    var str;
+    str  = '<div class="ad-container">';
+    str += '<div class="ad-container-inner">';
+    if (this.hasCookie()) {
+      str += '<div class="checkbutton"><a class="mb" href="' + this.url + '"><img src="/.shared-pleasy/images/spacer.gif" width="20px" height="20px" /></a></div>';
+    }
+    str += '<div class="ad-content">' + this.html + '</div>';
+    str += '</div>';
+    str += '</div>';
+    return str;
+  }
+};
+CocologFPA.Resource = function() {
+  this.written = false;
+  if (typeof(this.diff) === 'undefined') {
+    var modifiedOn = new Date(blogConfig.lastModifiedOn), // eg) Fri, 31 Mar 2013 09:11:03 UTC
+        modifiedOnUTC = new Date(modifiedOn.getUTCFullYear(), modifiedOn.getUTCMonth(), modifiedOn.getUTCDate(), modifiedOn.getUTCHours(), modifiedOn.getUTCMinutes(), modifiedOn.getUTCSeconds()),
+        today = new Date(),
+        todayUTC = new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), today.getUTCHours(), today.getUTCMinutes(), today.getUTCSeconds()),
+        diff = parseInt((todayUTC - modifiedOnUTC) / 86400000);
+    this.diff = diff;
+  }
+};
+CocologFPA.Resource.prototype = {
+  showHeaderContent: function() {
+    if (this.diff < CocologFPA.bDaysHeader) {
+      return;
+    }
+    var html, container;
+    if (CocologFPA.domHeaer && CocologFPA.domHeader.length <= 0) {
+      return;
+    }
+    container = new CocologFPA.Container({ "html": CocologFPA.domHeader });
+    html = container.toString();
+    document.write(html);
+  },
+  showMainContent: function() {
+    if (this.diff < CocologFPA.bDaysContent) {
+      return;
+    }
+    var html, container;
+    if (this.written) {
+      return;
+    }
+    if (CocologFPA.domContent && CocologFPA.domContent.length <= 0) {
+      return;
+    }
+    container = new CocologFPA.Container({ "html": CocologFPA.domContent });
+    html = container.toString();
+    document.write(html);
+    this.written = true;
+  },
+  showEntryBottom: function() {
+    if (this.diff < CocologFPA.bDaysEntryBottom) {
+      return;
+    }
+    var html, container;
+    if (CocologFPA.domEntryBottom && CocologFPA.domEntryBottom.length <= 0) {
+      return;
+    }
+    container = new CocologFPA.Container({ "html": CocologFPA.domEntryBottom });
+    html = container.toString();
+    document.write(html);
+  },
+  showFooterContent: function() {
+    if (this.diff < CocologFPA.bDaysFooter) {
+      return;
+    }
+    var html, container;
+    if (CocologFPA.domFooter && CocologFPA.domFooter.length <= 0) {
+      return;
+    }
+    container = new CocologFPA.Container({ "html": CocologFPA.domFooter });
+    html = container.toString();
+    document.write(html);
+  }
+};
+CocologFPA.instance = new CocologFPA.Resource();

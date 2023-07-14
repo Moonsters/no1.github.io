@@ -1,0 +1,301 @@
+// cocolog: switching advertisement
+
+if (!window.NIFTY) {  window.NIFTY = {}; }
+if (!window.NIFTY.cocolog) {  window.NIFTY.cocolog = {}; }
+if (!window.NIFTY.cocolog.ad) {  window.NIFTY.cocolog.ad = {}; }
+
+// ===[[argument start]]===
+if (!window.NIFTY.cocolog.ad.arg) { window.NIFTY.cocolog.ad.arg = {}; }
+window.NIFTY.cocolog.ad.execute = undefined;
+(function (){
+    var scripts = document.getElementsByTagName( 'script' );
+    var src = scripts[ scripts.length - 1 ].src;
+
+    var query = src.substring( src.indexOf( '?' ) + 1 );
+    var parameters = query.split( '&' );
+
+    var result = new Object();
+    for( var i = 0; i < parameters.length; i++ )
+    {
+        var element = parameters[ i ].split( '=' );
+
+        var paramName  = decodeURIComponent( element[ 0 ] );
+        var paramValue = decodeURIComponent( element[ 1 ] );
+
+        result[ paramName ] = paramValue;
+    }
+
+    window.NIFTY.cocolog.ad.arg = result;
+})();
+// ===[[argument end]]===
+
+// ===[[arg check start]]===
+window.NIFTY.cocolog.ad.type = {
+    header: 1,
+    content: 1,
+    middle: 1,
+    footer: 1
+}
+if (window.NIFTY.cocolog.ad.arg.ad && (window.NIFTY.cocolog.ad.arg.ad in window.NIFTY.cocolog.ad.type)) {
+    window.NIFTY.cocolog.ad.execute = true;
+}
+// ===[[arg check end]]===
+
+// ===[[advertisement start]]===
+if (!window.NIFTY.cocolog.ad.func) { window.NIFTY.cocolog.ad.func = {}; }
+
+// ---[header start]---
+window.NIFTY.cocolog.ad.func['header'] = {
+    not_afc : function() {
+//GNG HBNR
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 1,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>'
+        );
+    },
+    afc : function() {
+//GOK HBNR
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 1,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>'
+        );
+    },
+    open : function() {
+        document.write("<div id='cocolog-fpa-header' style='margin: 7px 0 15px 0 !important;'><div id='cocolog-fpa-header-inner' style='text-align: center;' ><div class='ad_header' style='text-align: center; display: inline-block'>");
+    },
+    close : function() {
+        document.write("</div></div></div>");
+    }
+}
+// ---[header end]---
+
+// ---[content start]---
+window.NIFTY.cocolog.ad.func['content'] = {
+// GNG DRMRECT
+    not_afc : function() {
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 2,',
+' center: false',
+'};',
+'if(!((\'ontouchstart\' in document) && (\'orientation\' in window))) {',
+'  document.write(\'<scr\'+\'ipt type="text/javascript" src="https://js.ad-spire.net/t/490/561/a1490561.js"></scr\'+\'ipt>\');',
+'}',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-spire.net/t/527/555/a1527555.js"></scr' + 'ipt>'
+        );
+    },
+    afc : function() {
+// GOK DRM_RECT
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 2,',
+' center: false',
+'};',
+'if(!((\'ontouchstart\' in document) && (\'orientation\' in window))) {',
+'  document.write(\'<scr\'+\'ipt type="text/javascript" src="https://js.ad-spire.net/t/490/561/a1490561.js"></scr\'+\'ipt>\');',
+'}',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-spire.net/t/527/555/a1527555.js"></scr' + 'ipt>'
+        );
+    },
+    open : function() {
+        document.write("<div id='cocolog-fpa-content' style='margin: 2px 0 0px 0 !important;'><div id='cocolog-fpa-content-inner'><div class='ad_content' style='height: 250px; width: 300px; margin:0 auto;'>");
+    },
+    close : function() {
+        document.write("</div></div></div>");
+    }
+}
+// ---[content end]---
+
+// ---[middle start]---
+window.NIFTY.cocolog.ad.func['middle'] = {
+    <!-- /48012543/NIFTY_PC/COCOLOG/GOOGLENG_FALSE/M2RECT -->
+    not_afc : function() {
+// GOK M2RECT
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 4,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>'
+        );
+    },
+    afc : function() {
+// GOK M2RECT
+        document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 4,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>'
+        );
+    },
+    open : function() {
+        document.write("<div id='cocolog-fpa-entry-bottom'>");
+    },
+    close : function() {
+        document.write("</div>");
+    }
+}
+// ---[middle end]---
+
+// ---[footer start]---
+window.NIFTY.cocolog.ad.func['footer'] = {
+    not_afc : function() {
+// Footer LR
+        document.write(
+'<div id="fpa-rect-lr" style="overflow: hidden; position: relative;">',
+'<div style="overflow: hidden; position: relative; width: 680px; margin: auto;">',
+'<div style="width: 300px; margin-left: 30px; margin-right: 10px; float: left; position: relative;">',
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 6,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'</div>',
+'</span>',
+'<div style="float: right; position: relative; margin-bottom: 30px;">',
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 5,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'</div>'
+        );
+
+// GNG recommend
+document.write(
+'<div style="margin-top: 30px; display: inline-block;">',
+'<scr' + 'ipt type="text/javascript" src="https://js.ad-spire.net/t/490/092/a1490092.js"></scr' + 'ipt>',
+'</div>'
+);
+// ↑---<divに>注意---↑
+
+
+document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://updates.cocolog-nifty.com/pleasy/chk_gdpr_pc.js" ></scr' + 'ipt>'
+);
+
+// GNG tablet
+document.write(
+'<scr' + 'ipt>',
+'if((\'ontouchstart\' in document) && (\'orientation\' in window)) {',
+'    document.write(\'<sc\'+\'ript type="text/javascript" src="https://js.ad-spire.net/t/490/091/a1490091.js"></scr\'+\'ipt>\');',
+'    document.write(\'<sc\'+\'ript type="text/javascript" src="https://js.ad-spire.net/t/490/143/a1490143.js"></scr\'+\'ipt>\');',
+'}',
+'</scr' + 'ipt>'
+);
+    },
+    afc : function() {
+// Footer LR        
+document.write(
+'<div>',
+'<div id="fpa-rect-lr" style="overflow: hidden; position: relative;">',
+'<div style="overflow: hidden; position: relative; width: 680px; margin: auto;">',
+'<div style="width: 300px; margin-left: 30px; margin-right: 10px; float: left; position: relative;">',
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 6,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'</div>',
+'<div style="float: right; position: relative; margin-bottom: 30px;">',
+'<scr' + 'ipt type="text/javascr' + 'ipt">',
+'var adstir_vars = {',
+' ver: "4.0",',
+' app_id: "MEDIA-f9345da3",',
+' ad_spot: 5,',
+' center: false',
+'};',
+'</scr' + 'ipt>',
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://js.ad-stir.com/js/adstir.js"></scr' + 'ipt>',
+'</div>',
+'</div>'
+        );
+
+// GOK_Recommend
+        document.write(
+            '<scr' + 'ipt type="text/javascript" src="https://js.ad-spire.net/t/481/837/a1481837.js"></scr' + 'ipt>'
+        );
+
+document.write(
+'<scr' + 'ipt type="text/javascr' + 'ipt" src="https://updates.cocolog-nifty.com/pleasy/chk_gdpr_pc.js" ></scr' + 'ipt>'
+);
+
+// GOK tablet
+document.write(
+'<scr' + 'ipt>',
+'if((\'ontouchstart\' in document) && (\'orientation\' in window)) {',
+'    document.write(\'<sc\'+\'ript type="text/javascript" src="https://js.ad-spire.net/t/471/960/a1471960.js"></scr\'+\'ipt>\');',
+'    document.write(\'<sc\'+\'ript type="text/javascript" src="https://js.ad-spire.net/t/490/143/a1490143.js"></scr\'+\'ipt>\');',
+'}',
+'</scr' + 'ipt>'
+);
+    },
+    open : function() {
+        document.write(
+"<div id='cocolog-fpa-footer' style='margin: 15px 0 100px 0 !important;'>",
+"<div id='cocolog-fpa-footer-inner' style='text-align: center;'>"
+        );
+    },
+    close : function() {
+    }
+}
+// ---[footer end]---
+// ===[[advertisement end]]===
+
+// ===[[output start]]===
+if (window.NIFTY.cocolog.ad.execute) {
+    NIFTY.cocolog.ad.func[window.NIFTY.cocolog.ad.arg.ad].open();
+    if (NIFTY.cocolog.ad.googleflag) {
+        NIFTY.cocolog.ad.func[window.NIFTY.cocolog.ad.arg.ad].afc();
+    } else {
+        NIFTY.cocolog.ad.func[window.NIFTY.cocolog.ad.arg.ad].not_afc();
+    };
+    NIFTY.cocolog.ad.func[window.NIFTY.cocolog.ad.arg.ad].close();
+}
+// ===[[output end]]===
+

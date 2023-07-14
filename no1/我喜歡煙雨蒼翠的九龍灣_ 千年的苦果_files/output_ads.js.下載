@@ -1,0 +1,8 @@
+// IE8/9/10対応のため、別ファイルとする
+
+// 広告を表示するための関数を呼び出す
+if (NIFTY.cocolog.ad.googleflag) {
+    NIFTY.cocolog.ad.displayGoogleText();
+} else {
+    NIFTY.cocolog.ad.displayXListing();
+}
